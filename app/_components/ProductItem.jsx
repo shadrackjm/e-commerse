@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { SquareChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 function ProductItem({item}) {
   return (
-    <div>
+    <Link href={'/product-details/'+item.id+''}>
         <div className='hover:border p-1 rounded-lg border-blue-500'>
             <Image src={item?.attributes?.banner?.data?.attributes?.url} className='rounded-t-lg h-[175px] object-cover' alt={'banner'} height={400} width={350}/>    
         <div className='flex justify-between items-center bg-gray-50 p-3 rounded-b-lg'>
@@ -19,7 +20,7 @@ function ProductItem({item}) {
         </div>
 
 
-    </div>
+    </Link>
     
   )
 }

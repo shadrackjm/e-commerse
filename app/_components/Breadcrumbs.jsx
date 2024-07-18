@@ -1,18 +1,13 @@
 import React from 'react'
 
-function Breadcrumbs() {
+function Breadcrumbs({path}) {
   return (
     <div>
-        {/*
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
-*/}
 
 <nav aria-label="Breadcrumb">
   <ol className="flex items-center gap-1 text-sm text-gray-600">
     <li>
-      <a href="#" className="block transition hover:text-gray-700">
+      <a href="/" className="block transition hover:text-gray-700">
         <span className="sr-only"> Home </span>
 
         <svg
@@ -48,7 +43,7 @@ function Breadcrumbs() {
     </li>
 
     <li>
-      <a href="#" className="block transition hover:text-gray-700"> Shirts </a>
+      <a href="#" className="block transition hover:text-gray-700"> {path?.split('/')[1]} </a>
     </li>
 
     <li className="rtl:rotate-180">
@@ -67,7 +62,7 @@ function Breadcrumbs() {
     </li>
 
     <li>
-      <a href="#" className="block transition hover:text-gray-700"> Plain Tee </a>
+      <a href="#" className="block transition hover:text-gray-700"> {path?.split('/')[2]} </a>
     </li>
   </ol>
 </nav>
